@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     private Map<String, Persona> personas;
 
-    public PersonaController(Map<String, Persona> personas) throws ParseException {
+    public PersonaController() throws ParseException {
         personas = new HashMap<String, Persona>();
 
         Persona p = new Persona();
