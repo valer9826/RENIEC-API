@@ -1,4 +1,4 @@
-package com.reniec.controller;
+package com.reniec.reniec_api.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-import com.reniec.model.Persona;
+import com.reniec.reniec_api.model.Persona;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,10 +15,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
 @RequestMapping(value = "api/persona", produces = "application/json")

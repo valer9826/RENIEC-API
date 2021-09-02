@@ -1,4 +1,4 @@
-package com.reniec.model;
+package com.reniec.reniec_api.model;
 
 import java.util.Date;
 import lombok.*;
