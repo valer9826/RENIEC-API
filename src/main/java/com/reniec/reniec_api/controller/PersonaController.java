@@ -14,8 +14,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,14 +46,6 @@ public class PersonaController {
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Map<String, Persona>> all() {
         return new ResponseEntity<Map<String, Persona>>(personas, HttpStatus.OK);
-    }
-
-    @PostMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> add(@RequestBody Persona p) {
-        String id = UUID.randomUUID().toString();
-        p.setId(id);
-        personas.put(id, p);
-        return new ResponseEntity<String>(id, HttpStatus.CREATED);
     }
 
     @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
