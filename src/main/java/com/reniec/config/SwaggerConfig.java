@@ -18,7 +18,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("Contoso API")
+        return new ApiInfoBuilder().title("Reniec API")
                 .description("This application designed for integration propousal").build();
     }
 }

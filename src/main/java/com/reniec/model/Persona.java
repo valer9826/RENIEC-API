@@ -1,9 +1,16 @@
 package com.reniec.model;
 
 import java.util.Date;
+import lombok.*;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Persona {
 
+    private String id;
     private String nombre;
     private String apellido;
     private String dni;
