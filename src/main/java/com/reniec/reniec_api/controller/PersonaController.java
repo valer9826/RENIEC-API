@@ -32,7 +32,7 @@ public class PersonaController {
         p.setApellido("Gonzales");
         p.setDni("12345678");
         p.setSexo("M");
-        String fechaNacimiento = "01/01/1990";
+        String fechaNacimiento = "01/01/2001";
         Date fN = new SimpleDateFormat("dd/MM/yyyy").parse(fechaNacimiento);
         p.setFechaNacimiento(fN);
         p.setEstadoCivil("S");
@@ -41,7 +41,8 @@ public class PersonaController {
         p.setDistrito("SJL");
         p.setDireccion("Av. Siempre Viva 123");
         String id = UUID.randomUUID().toString();
-        personas.put(id, p);
+        p.setId(id);
+        personas.put(p.getDni(), p);
     }
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -57,10 +58,10 @@ public class PersonaController {
         return new ResponseEntity<String>(id, HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Persona> find(@PathVariable String id) {
-        if (personas.containsKey(id)) {
-            Persona p = personas.get(id);
+    @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Persona> find(@PathVariable String dni) {
+        if (personas.containsKey(dni)) {
+            Persona p = personas.get(dni);
             return new ResponseEntity<Persona>(p, HttpStatus.OK);
         } else {
             return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
