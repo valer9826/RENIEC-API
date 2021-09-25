@@ -43,10 +43,12 @@ public class PersonaController {
         personas.put(p.getDni(), p);
     }
 
-    @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Map<String, Persona>> all() {
-        return new ResponseEntity<Map<String, Persona>>(personas, HttpStatus.OK);
-    }
+    /* --------------METODO PARA MOSTRAR TODOS LOS DNI ------------------- */
+
+    // @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    // public ResponseEntity<Map<String, Persona>> all() {
+    // return new ResponseEntity<Map<String, Persona>>(personas, HttpStatus.OK);
+    // }
 
     @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Persona> find(@PathVariable String dni) {
@@ -56,6 +58,6 @@ public class PersonaController {
         } else {
             return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
         }
-
     }
+
 }
