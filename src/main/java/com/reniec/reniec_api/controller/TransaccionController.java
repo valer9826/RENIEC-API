@@ -4,7 +4,7 @@ import com.reniec.reniec_api.model.Transaccion;
 
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
-
+/*Transaccion */
 @RestController
 @RequestMapping(value = "api/transaccion", produces = "application/json")
 public class TransaccionController {
