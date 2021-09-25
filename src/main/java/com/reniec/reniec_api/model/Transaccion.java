@@ -19,7 +19,7 @@ public class Transaccion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_Transaccion;
+    private String idTransaccion;
     private Persona dni;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private Date fecha_Transaccion;
