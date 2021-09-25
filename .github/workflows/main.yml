@@ -21,7 +21,7 @@ jobs:
         java-version: '16'
     
     - name: Build with Maven Backend
-      run: mvn -B package --file pom.xml -DskipTests
+      run: mvn -B package --file api-reniec/pom.xml -DskipTests
 
     - name: Build, Push and Release a Docker container to Heroku Backend
       uses: gonuit/heroku-docker-deploy@v1.3.2 
@@ -33,7 +33,7 @@ jobs:
           
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
 
-          dockerfile_directory: .
+          dockerfile_directory: ./api-reniec
 
           dockerfile_name: DockerFile
 
