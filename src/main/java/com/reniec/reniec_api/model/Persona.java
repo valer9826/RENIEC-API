@@ -1,7 +1,7 @@
 package com.reniec.reniec_api.model;
 
 import java.util.Date;
-import javax.persistence.*;
+// import javax.persistence.*;
 import lombok.*;
 
 @Getter
@@ -9,12 +9,9 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
-@Table(name = "t_persona")
+
 public class Persona {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String nombre;
     private String apellido;
