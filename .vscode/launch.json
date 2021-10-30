@@ -19,6 +19,16 @@
             "mainClass": "com.reniecweb.web.WebApplication",
             "projectName": "web",
             "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiClienteApplication<api-cliente>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "reniec.cliente.apicliente.ApiClienteApplication",
+            "projectName": "api-cliente",
+            "args": ""
         }
     ]
 }
