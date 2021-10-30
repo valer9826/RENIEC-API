@@ -1,4 +1,4 @@
-package com.reniecweb.web.model;
+package com.reniec.reniec_api.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
