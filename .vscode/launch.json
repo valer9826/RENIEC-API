@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ReniecApiApplication<reniec_api>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.reniec.reniec_api.ReniecApiApplication",
+            "projectName": "reniec_api",
+            "args": ""
+        }
+    ]
+}
