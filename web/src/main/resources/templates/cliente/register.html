@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org" 
+    th:replace="~{fragments/layout :: layout (~{::body},'client')}">
+
+<body>
+    <div class="contenedor">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="title__login">Regístrese</h2>
+          <form th:object="${client}" th:action="@{/cliente/register}" method="post">
+            <div class="form-list__row">
+              <label for="firstName">Nombre</label>
+              <input type="text" th:field="*{firstName}" required/>
+            </div>
+            <div class="form-list__row">
+              <label for="lastName">Apellidos</label>
+              <input type="text" th:field="*{lastName}" required/>
+            </div>
+            <div class="form-list__row">
+              <label for="email">Email</label>
+              <input type="email" data-inputmask="'alias': 'email'"
+                  autocomplete="off" th:field="*{email}" required/>
+            </div>
+            <div class="form-list__row">
+              <label for="user.userID">Usuario</label>
+              <input type="text" th:field="*{user.userID}" required/>
+            </div>
+            <div class="form-list__row">
+              <label for="user.password">Contraseña</label>
+              <input type="password" th:field="*{user.password}" required/>
+            </div>
+            <div class="form-list__row">
+              <button th:with="text='registrar'" class="btn btn-primary btn1" type="submit" th:text="${text}"/>
+            </div>
+          </form>
+          <p th:text="${mensaje}" />
+        </div>
+      </div>
+    </div>
+
+    
+      <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+      <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
+      <script th:src="@{/webjars/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+      <script th:src="@{/webjars/jquery.inputmask/jquery.inputmask.min.js}"></script>    
+  
+      <script>
+        $('.input-group.date').datepicker({
+          autoclose: true,
+          todayHighlight: true
+        });
+      </script>
+      <script>
+        $(":input").inputmask();
+      </script>
+</body>
+
+</html>
+
+<style>
+  .contenido{
+    min-height: calc(100vh - 130px - 420px);
+  }
+
+  .contenedor{
+      width: 60%;
+      max-width: 1000px;
+      margin: auto;
+      padding: 50px;
+      position: relative;
+      overflow: hidden; 
+    }
+
+    .btn1{
+      width: 100%;
+    }
+
+    .card{
+      padding: 50px;
+    }
+
+    form{
+      margin: auto;
+      padding: 30px 10px;
+    }
+
+    .form-list {
+        padding-left: 0;
+        list-style: none; 
+    }
+
+    .form-list__row {
+        margin-bottom: 25px; 
+    }
+
+    .form-list__row label {
+        position: relative;
+        display: block;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: .5px;
+    }
+
+    .form-list__row--inline {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between; 
+    }
+
+    .form-list__row--inline > :first-child {
+        -ms-flex: 2;
+        flex: 2;
+        padding-right: 20px; }
+
+    .form-list__row--inline > :nth-child(2n) {
+        -ms-flex: 1;
+        flex: 1; 
+    }
+
+    input {
+        width: calc(100% - 10px);
+        min-height: 30px;
+        padding: 5px;
+        letter-spacing: .5px;
+        border: 1.3px solid #E8E8E8; 
+        border-radius: 4px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #fbcf34; 
+    }
+
+    .title__login{
+      font-size: 35px;
+      text-align: center;
+      font-family: 'Lato', sans-serif;
+      padding: 20px 0;
+      letter-spacing: 1.5px;
+    }
+</style>

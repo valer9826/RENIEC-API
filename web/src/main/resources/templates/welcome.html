@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org"
+th:replace="~{fragments/layout :: layout (~{::body},'home')}">
+
+
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="Bienvenido">Bienvenido</h2>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+    .body{
+        height:100vh;
+    }
+
+    .contenido{
+      height: 75vh;
+    }
+
+    .Bienvenido{
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Oswald', sans-serif;
+        letter-spacing: 3px;
+        padding: 30px;
+        margin: 40px;
+        border: 2px solid #000;
+    }
+</style>

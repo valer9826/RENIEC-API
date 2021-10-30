@@ -9,6 +9,19 @@
             "mainClass": "com.reniec.reniec_api.ReniecApiApplication",
             "projectName": "reniec_api",
             "args": ""
+<<<<<<< HEAD
+=======
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-WebApplication<web>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.reniecweb.web.WebApplication",
+            "projectName": "web",
+            "args": ""
+>>>>>>> 9c5a36de7179b4eecfb377b291488e5f356ce417
         }
     ]
 }
