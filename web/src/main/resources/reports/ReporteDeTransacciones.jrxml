@@ -91,7 +91,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="94" splitType="Stretch">
+		<band height="189" splitType="Stretch">
 			<staticText>
 				<reportElement x="240" y="50" width="299" height="30" uuid="67a6e65e-e363-4f95-952e-f884e5df10e0"/>
 				<textElement>
@@ -100,8 +100,8 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 				<text><![CDATA[REPORTE DE TRANSACCIONES]]></text>
 			</staticText>
 			<image>
-				<reportElement x="30" y="22" width="60" height="50" uuid="074fe4c5-e5d5-48a9-8a8f-aa5432320bf5"/>
-				<imageExpression><![CDATA[""]]></imageExpression>
+				<reportElement x="-20" y="10" width="220" height="150" uuid="421b46ad-6ab2-4593-a03b-c49c2e3f30de"/>
+				<imageExpression><![CDATA["https://apps.reniec.gob.pe/estadocivil/static/custom/img/logo_RENIEC_visa.png"]]></imageExpression>
 			</image>
 		</band>
 	</title>
@@ -115,7 +115,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 				<text><![CDATA[]]></text>
 			</staticText>
 			<componentElement>
-				<reportElement x="130" y="30" width="209" height="160" uuid="c5971c0b-07e2-4918-b2ad-1fbf2b589b9e">
+				<reportElement x="40" y="-20" width="440" height="210" uuid="c5971c0b-07e2-4918-b2ad-1fbf2b589b9e">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
 					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
@@ -125,12 +125,12 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 					<datasetRun subDataset="Dataset1" uuid="6e5b849d-eaa9-424c-9ed1-a614c917d98c">
 						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					</datasetRun>
-					<jr:column width="40" uuid="9eea19b7-637e-41da-9dfb-f6039c266b29">
+					<jr:column width="80" uuid="9eea19b7-637e-41da-9dfb-f6039c266b29">
 						<jr:tableHeader style="Table_TH" height="30"/>
 						<jr:tableFooter style="Table_TH" height="30"/>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="40" height="30" uuid="306f3d38-af14-4341-b35c-1e477e79e47c"/>
+								<reportElement x="0" y="0" width="80" height="30" uuid="306f3d38-af14-4341-b35c-1e477e79e47c"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -140,7 +140,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 						<jr:columnFooter style="Table_CH" height="30"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="40" height="30" uuid="51c49ec4-adec-4127-9a72-f4027cd6e85b"/>
+								<reportElement x="0" y="0" width="80" height="30" uuid="51c49ec4-adec-4127-9a72-f4027cd6e85b"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -148,12 +148,12 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="40" uuid="f6456749-74c8-45b8-9aeb-9c8af4e3fa1f">
+					<jr:column width="60" uuid="f6456749-74c8-45b8-9aeb-9c8af4e3fa1f">
 						<jr:tableHeader style="Table_TH" height="30"/>
 						<jr:tableFooter style="Table_TH" height="30"/>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="40" height="30" uuid="2b3fdefa-8316-4c53-8761-540569e44901"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="2b3fdefa-8316-4c53-8761-540569e44901"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -163,7 +163,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 						<jr:columnFooter style="Table_CH" height="30"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="40" height="30" uuid="9e102e3d-5be0-460e-a085-4615f63b2e21"/>
+								<reportElement x="0" y="0" width="60" height="30" uuid="9e102e3d-5be0-460e-a085-4615f63b2e21"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -171,12 +171,12 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="40" uuid="8954ca19-3fe2-4e40-94d5-8e86b19fc4e3">
+					<jr:column width="80" uuid="8954ca19-3fe2-4e40-94d5-8e86b19fc4e3">
 						<jr:tableHeader style="Table_TH" height="30"/>
 						<jr:tableFooter style="Table_TH" height="30"/>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="40" height="30" uuid="e6f5481e-d78a-45ea-a5ba-4f0e7b0cbfb4"/>
+								<reportElement x="0" y="0" width="80" height="30" uuid="e6f5481e-d78a-45ea-a5ba-4f0e7b0cbfb4"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -186,7 +186,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 						<jr:columnFooter style="Table_CH" height="30"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="40" height="30" uuid="329cc113-6b3d-4920-853e-ce50379108c6"/>
+								<reportElement x="0" y="0" width="80" height="30" uuid="329cc113-6b3d-4920-853e-ce50379108c6"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -194,12 +194,12 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="40" uuid="5b16e57f-b8d8-4af5-a08c-fdd2a0fe19d0">
+					<jr:column width="110" uuid="5b16e57f-b8d8-4af5-a08c-fdd2a0fe19d0">
 						<jr:tableHeader style="Table_TH" height="30"/>
 						<jr:tableFooter style="Table_TH" height="30"/>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="40" height="30" uuid="025f2b5b-968f-4780-b583-01c1e149c640"/>
+								<reportElement x="0" y="0" width="110" height="30" uuid="025f2b5b-968f-4780-b583-01c1e149c640"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -209,7 +209,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 						<jr:columnFooter style="Table_CH" height="30"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="40" height="30" uuid="a4334e2d-835e-46c0-a64e-7e75e899884b"/>
+								<reportElement x="0" y="0" width="110" height="30" uuid="a4334e2d-835e-46c0-a64e-7e75e899884b"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -217,12 +217,12 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 							</textField>
 						</jr:detailCell>
 					</jr:column>
-					<jr:column width="40" uuid="167a2eb8-b057-472e-a4ca-eff58bc29682">
+					<jr:column width="120" uuid="167a2eb8-b057-472e-a4ca-eff58bc29682">
 						<jr:tableHeader style="Table_TH" height="30"/>
 						<jr:tableFooter style="Table_TH" height="30"/>
 						<jr:columnHeader style="Table_CH" height="30">
 							<staticText>
-								<reportElement x="0" y="0" width="40" height="30" uuid="2077ab8d-0f95-4b70-9b0b-6237cb920a18"/>
+								<reportElement x="0" y="0" width="120" height="30" uuid="2077ab8d-0f95-4b70-9b0b-6237cb920a18"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
@@ -232,7 +232,7 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 						<jr:columnFooter style="Table_CH" height="30"/>
 						<jr:detailCell style="Table_TD" height="30">
 							<textField>
-								<reportElement x="0" y="0" width="40" height="30" uuid="bd79d10e-104f-4e71-9441-1f16cefac267"/>
+								<reportElement x="0" y="0" width="120" height="30" uuid="bd79d10e-104f-4e71-9441-1f16cefac267"/>
 								<textElement>
 									<font fontName="DejaVu Sans" size="10"/>
 								</textElement>
