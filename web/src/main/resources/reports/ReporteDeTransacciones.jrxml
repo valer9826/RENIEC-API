@@ -85,42 +85,13 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 		</group>
 	</subDataset>
 	<queryString language="SQL">
-		<![CDATA[select tc.first_name || ' ' || tc.last_name as "cliente", tc.user_id as "usuario", tt.fecha_transaccion as "fecha", p.dni as "dni_consultado", p.nombre || ' ' || p.apellido as "nombre_consultado"
-from t_cliente tc, t_transaccion tt, persona p
-where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
+		<![CDATA[]]>
 	</queryString>
-	<field name="cliente" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="cliente"/>
-		<property name="com.jaspersoft.studio.field.label" value="cliente"/>
-	</field>
-	<field name="usuario" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="usuario"/>
-		<property name="com.jaspersoft.studio.field.label" value="usuario"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="t_cliente"/>
-	</field>
-	<field name="fecha" class="java.sql.Timestamp">
-		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
-		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="t_transaccion"/>
-	</field>
-	<field name="dni_consultado" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="dni_consultado"/>
-		<property name="com.jaspersoft.studio.field.label" value="dni_consultado"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
-	</field>
-	<field name="nombre_consultado" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="nombre_consultado"/>
-		<property name="com.jaspersoft.studio.field.label" value="nombre_consultado"/>
-	</field>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="90" splitType="Stretch">
-			<image>
-				<reportElement x="-10" y="0" width="519" height="90" uuid="6bd521c5-0efa-48cd-8891-e35ab5f2d3d9"/>
-				<imageExpression><![CDATA["C:/Users/Diego Linares/Pictures/reniec.png"]]></imageExpression>
-			</image>
+		<band height="94" splitType="Stretch">
 			<staticText>
 				<reportElement x="240" y="50" width="299" height="30" uuid="67a6e65e-e363-4f95-952e-f884e5df10e0"/>
 				<textElement>
@@ -128,6 +99,10 @@ where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
 				</textElement>
 				<text><![CDATA[REPORTE DE TRANSACCIONES]]></text>
 			</staticText>
+			<image>
+				<reportElement x="30" y="22" width="60" height="50" uuid="074fe4c5-e5d5-48a9-8a8f-aa5432320bf5"/>
+				<imageExpression><![CDATA[""]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>
