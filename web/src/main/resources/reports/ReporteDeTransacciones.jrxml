@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.17.0.final using JasperReports Library version 6.17.0-6d93193241dd8cc42629e188b94f9e0bc5722efd  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac455ae2-df84-47c6-abf9-40e3b7820b31">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DAdapter_reniec"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="dsReporteTransaccion" uuid="760f2949-a3e4-4525-bbbe-388d6ae4ae7f">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DAdapter_reniec"/>
+		<queryString language="SQL">
+			<![CDATA[]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="Dataset1" uuid="b11b4626-67ad-42c2-afb9-6ccefdf584c0">
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DAdapter_reniec"/>
+		<queryString language="SQL">
+			<![CDATA[select tc.first_name || ' ' || tc.last_name as "cliente", tc.user_id as "usuario", tt.fecha_transaccion as "fecha", p.dni as "dni_consultado", p.nombre || ' ' || p.apellido as "nombre_consultado"
+from t_cliente tc, t_transaccion tt, persona p
+where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
+		</queryString>
+		<field name="cliente" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="cliente"/>
+			<property name="com.jaspersoft.studio.field.label" value="cliente"/>
+		</field>
+		<field name="usuario" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="usuario"/>
+			<property name="com.jaspersoft.studio.field.label" value="usuario"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="t_cliente"/>
+		</field>
+		<field name="fecha" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+			<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="t_transaccion"/>
+		</field>
+		<field name="dni_consultado" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="dni_consultado"/>
+			<property name="com.jaspersoft.studio.field.label" value="dni_consultado"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+		</field>
+		<field name="nombre_consultado" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.name" value="nombre_consultado"/>
+			<property name="com.jaspersoft.studio.field.label" value="nombre_consultado"/>
+		</field>
+		<group name="cliente">
+			<groupExpression><![CDATA[$F{cliente}]]></groupExpression>
+		</group>
+		<group name="usuario">
+			<groupExpression><![CDATA[$F{usuario}]]></groupExpression>
+		</group>
+		<group name="fecha">
+			<groupExpression><![CDATA[$F{fecha}]]></groupExpression>
+		</group>
+		<group name="dni_consultado">
+			<groupExpression><![CDATA[$F{dni_consultado}]]></groupExpression>
+		</group>
+		<group name="nombre_consultado">
+			<groupExpression><![CDATA[$F{nombre_consultado}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select tc.first_name || ' ' || tc.last_name as "cliente", tc.user_id as "usuario", tt.fecha_transaccion as "fecha", p.dni as "dni_consultado", p.nombre || ' ' || p.apellido as "nombre_consultado"
+from t_cliente tc, t_transaccion tt, persona p
+where tc.user_id = tt.user_id and p.dni = tt.persona_dni;]]>
+	</queryString>
+	<field name="cliente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cliente"/>
+		<property name="com.jaspersoft.studio.field.label" value="cliente"/>
+	</field>
+	<field name="usuario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="usuario"/>
+		<property name="com.jaspersoft.studio.field.label" value="usuario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_cliente"/>
+	</field>
+	<field name="fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="t_transaccion"/>
+	</field>
+	<field name="dni_consultado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="dni_consultado"/>
+		<property name="com.jaspersoft.studio.field.label" value="dni_consultado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="nombre_consultado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="nombre_consultado"/>
+		<property name="com.jaspersoft.studio.field.label" value="nombre_consultado"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<image>
+				<reportElement x="-10" y="0" width="519" height="90" uuid="6bd521c5-0efa-48cd-8891-e35ab5f2d3d9"/>
+				<imageExpression><![CDATA["C:/Users/Diego Linares/Pictures/reniec.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="240" y="50" width="299" height="30" uuid="67a6e65e-e363-4f95-952e-f884e5df10e0"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="19"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE TRANSACCIONES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="260" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="20" width="100" height="19" uuid="8240c535-ec37-43e6-ac90-7eca6a77e200"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="130" y="30" width="209" height="160" uuid="c5971c0b-07e2-4918-b2ad-1fbf2b589b9e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Dataset1" uuid="6e5b849d-eaa9-424c-9ed1-a614c917d98c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="40" uuid="9eea19b7-637e-41da-9dfb-f6039c266b29">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="306f3d38-af14-4341-b35c-1e477e79e47c"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<text><![CDATA[cliente]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="51c49ec4-adec-4127-9a72-f4027cd6e85b"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{cliente}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="f6456749-74c8-45b8-9aeb-9c8af4e3fa1f">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="2b3fdefa-8316-4c53-8761-540569e44901"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<text><![CDATA[usuario]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="9e102e3d-5be0-460e-a085-4615f63b2e21"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{usuario}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="8954ca19-3fe2-4e40-94d5-8e86b19fc4e3">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="e6f5481e-d78a-45ea-a5ba-4f0e7b0cbfb4"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<text><![CDATA[fecha]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="329cc113-6b3d-4920-853e-ce50379108c6"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="5b16e57f-b8d8-4af5-a08c-fdd2a0fe19d0">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="025f2b5b-968f-4780-b583-01c1e149c640"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<text><![CDATA[dni_consultado]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="a4334e2d-835e-46c0-a64e-7e75e899884b"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{dni_consultado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="167a2eb8-b057-472e-a4ca-eff58bc29682">
+						<jr:tableHeader style="Table_TH" height="30"/>
+						<jr:tableFooter style="Table_TH" height="30"/>
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="2077ab8d-0f95-4b70-9b0b-6237cb920a18"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<text><![CDATA[nombre_consultado]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="Table_CH" height="30"/>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="30" uuid="bd79d10e-104f-4e71-9441-1f16cefac267"/>
+								<textElement>
+									<font fontName="DejaVu Sans" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{nombre_consultado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

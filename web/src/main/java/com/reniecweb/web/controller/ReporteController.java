@@ -1,4 +1,4 @@
-package com.reniec.reniec_api.controller;
+package com.reniecweb.web.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,13 +27,13 @@ public class ReporteController {
         this.resourceLoader = resourceLoader;
     }
 
-    @GetMapping("/jasper/repventas")
-    public void generateReporteVentas(HttpServletResponse response)  {
+    @GetMapping("/jasper/reptransacciones")
+    public void generateReporteTransacciones(HttpServletResponse response)  {
         response.setContentType("application/x-download");
-        response.setHeader("Content-Disposition", String.format("attachment; filename=\"ventas.pdf\""));
+        response.setHeader("Content-Disposition", String.format("attachment; filename=\"transacciones.pdf\""));
         try {
             OutputStream out = response.getOutputStream();
-            Resource resource = resourceLoader.getResource("classpath:./reports/ReporteDeVentas.jrxml");
+            Resource resource = resourceLoader.getResource("classpath:./reports/ReporteDeTransacciones.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(resource.getInputStream());
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, 
                     jdbcTemplate.getDataSource().getConnection());
