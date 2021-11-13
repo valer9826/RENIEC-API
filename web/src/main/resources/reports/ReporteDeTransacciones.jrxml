@@ -30,13 +30,6 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
-	<subDataset name="dsReporteTransaccion" uuid="760f2949-a3e4-4525-bbbe-388d6ae4ae7f">
-		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DAdapter_reniec"/>
-		<queryString language="SQL">
-			<![CDATA[]]>
-		</queryString>
-	</subDataset>
 	<subDataset name="Dataset1" uuid="b11b4626-67ad-42c2-afb9-6ccefdf584c0">
 		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DAdapter_reniec"/>
