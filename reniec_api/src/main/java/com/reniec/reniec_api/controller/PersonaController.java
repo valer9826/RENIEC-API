@@ -73,8 +73,8 @@ public class PersonaController {
     @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Persona> find(@PathVariable String dni) {
         Optional<Persona> p = personaData.findByDni(dni);
+        //transacData.transactQuery(dni);
         if (p.isPresent()){
-            transacData.transactQuery(dni);
             return new ResponseEntity<Persona>(p.get(), HttpStatus.OK);
         }else
             return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
