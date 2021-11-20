@@ -24,7 +24,7 @@ public class DashboardController {
     @GetMapping(value = "/pedidostotales", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<Map<String, Object>>> productos(){
         return  new ResponseEntity<List<Map<String, Object>>>(
-            usrConsulta.findByUsuario(), HttpStatus.OK);
+            usrConsulta.queryReport(), HttpStatus.OK);
     }
 
 

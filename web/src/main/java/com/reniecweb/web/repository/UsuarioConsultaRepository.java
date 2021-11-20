@@ -11,6 +11,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsuarioConsultaRepository extends JpaRepository<Cliente, String>{
-    @Query(value = "select tt.user_id, count(tt.persona_dni) from t_transaccion tt group by tt.user_id")
-    List<Map<String, Object>> findByUsuario();
+    @Query(value = "select tt.user_id as descripcion, count(tt.persona_dni) as montototal from t_transaccion tt group by tt.user_id", nativeQuery = true)
+    List<Map<String, Object>> queryReport();
 }
