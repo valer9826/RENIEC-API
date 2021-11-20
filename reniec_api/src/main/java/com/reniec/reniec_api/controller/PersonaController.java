@@ -11,6 +11,7 @@ import java.text.ParseException;
 
 import com.reniec.reniec_api.model.Persona;
 import com.reniec.reniec_api.repository.PersonaRepository;
+import com.reniec.reniec_api.repository.TransaccionRepository;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -28,9 +29,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     // private Map<String, Persona> personas;
     private final PersonaRepository personaData;
+    private final TransaccionRepository transacData;
 
-    public PersonaController(PersonaRepository personaData) throws ParseException {
+    public PersonaController(PersonaRepository personaData, TransaccionRepository transacData) throws ParseException {
         this.personaData = personaData;
+        this.transacData = transacData;
 
         // personas = new HashMap<String, Persona>();
 
@@ -70,11 +73,12 @@ public class PersonaController {
     @GetMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Persona> find(@PathVariable String dni) {
         Optional<Persona> p = personaData.findByDni(dni);
-        if (p.isPresent())
+        if (p.isPresent()){
+            transacData.transactQuery(dni);
             return new ResponseEntity<Persona>(p.get(), HttpStatus.OK);
-        else
+        }else
             return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
-    }
+        }
 
     @PutMapping(value = "/{dni}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Persona> update(@PathVariable String dni, @RequestBody Persona p) {
@@ -96,7 +100,6 @@ public class PersonaController {
         } else
             return new ResponseEntity<Persona>(HttpStatus.NOT_FOUND);
     }
-}
 // if (personas.containsKey(dni)) {
 // Persona p = personas.get(dni);
 // return new ResponseEntity<Persona>(p, HttpStatus.OK);
@@ -106,3 +109,5 @@ public class PersonaController {
 // }
 
 // }
+
+}
